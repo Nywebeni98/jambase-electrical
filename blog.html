@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hlathi Electrical Services - Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #111827;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #fefce8 100%);
+            min-height: 100vh;
+        }
+        /* Header Styles */
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+        
+        .back-link:hover {
+            color: #1d4ed8;
+            background: #f0f9ff;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav a {
+            color: #6b7280;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        
+        .nav a:hover {
+            color: #2563eb;
+            background: #f0f9ff;
+        }
+        
+        .nav a.active {
+            color: #2563eb;
+            background: #dbeafe;
+            font-weight: 700;
+        }
+        /* Hero Section */
+        
+        .hero {
+            position: relative;
+            padding: 80px 24px;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(37, 99, 235, 0.1) 0%, rgba(250, 204, 21, 0.1) 100%);
+            z-index: -1;
+        }
+        
+        .hero-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            line-height: 1.1;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb 0%, #eab308 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            line-height: 1.7;
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        /* Main Content */
+        
+        .main {
+            max-width: 1152px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        /* Card Styles */
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 64px;
+            transition: all 0.4s ease;
+            border: none;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.15);
+        }
+        /* Video Section */
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            background: #000;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .card-content {
+            padding: 40px;
+        }
+        
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 32px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .video-badge {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 6px 16px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .card h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #111827;
+            line-height: 1.2;
+        }
+        
+        .card p {
+            font-size: 1.125rem;
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+        /* Button Styles */
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #ec4899;
+            border: 2px solid #ec4899;
+        }
+        
+        .btn-outline:hover {
+            background: #ec4899;
+            color: white;
+            transform: translateY(-2px);
+        }
+        /* Founder Story Section */
+        
+        .founder-story {
+            background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .founder-story::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></g></svg>') repeat;
+            opacity: 0.2;
+        }
+        
+        .founder-content {
+            position: relative;
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .founder-badge {
+            background: #fbbf24;
+            color: #1e40af;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .founder-story h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            line-height: 1.2;
+        }
+        
+        .founder-story p {
+            color: #bfdbfe;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        
+        .founder-story strong {
+            color: white;
+        }
+        
+        .feature-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .feature-icon {
+            width: 32px;
+            height: 32px;
+            color: #fbbf24;
+            margin-bottom: 16px;
+        }
+        
+        .feature-item h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .feature-item p {
+            color: #bfdbfe;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        /* UVU Africa Section */
+        
+        .uvu-section {
+            background: linear-gradient(90deg, #059669 0%, #047857 100%);
+            color: white;
+        }
+        
+        .uvu-content {
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .uvu-badge {
+            background: #fbbf24;
+            color: #047857;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .uvu-section h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            line-height: 1.2;
+        }
+        
+        .uvu-section p {
+            color: #a7f3d0;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        
+        .uvu-section strong {
+            color: white;
+        }
+        
+        .uvu-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .uvu-feature {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .uvu-feature:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        /* Gallery Section */
+        
+        .gallery {
+            padding: 40px;
+        }
+        
+        .gallery h3 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #111827;
+        }
+        
+        .gallery-description {
+            font-size: 1.25rem;
+            color: #6b7280;
+            text-align: center;
+            max-width: 768px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        /* Services Grid */
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border: none;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-header {
+            height: 200px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-header.blue {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        
+        .service-header.yellow {
+            background: linear-gradient(135deg, #eab308 0%, #d97706 100%);
+        }
+        
+        .service-header.green {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.15);
+        }
+        
+        .service-content {
+            padding: 32px;
+        }
+        
+        .service-badge {
+            padding: 6px 16px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        
+        .service-badge.blue {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .service-badge.yellow {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .service-badge.green {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .service-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #111827;
+        }
+        
+        .service-content p {
+            color: #6b7280;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        /* CTA Section */
+        
+        .cta {
+            background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></g></svg>') repeat;
+            opacity: 0.2;
+        }
+        
+        .cta-content {
+            position: relative;
+            padding: 60px 48px;
+            text-align: center;
+        }
+        
+        .cta h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            line-height: 1.2;
+        }
+        
+        .cta p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 768px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .btn-yellow {
+            background: #fbbf24;
+            color: #1e40af;
+            padding: 16px 32px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        }
+        
+        .btn-yellow:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+        }
+        
+        .btn-white {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 16px 32px;
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+        
+        .btn-white:hover {
+            background: white;
+            color: #1e40af;
+            transform: translateY(-2px);
+        }
+        /* Footer */
+        
+        .footer {
+            background: #111827;
+            color: white;
+            padding: 64px 24px 32px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+        
+        .footer h4 {
+            color: #fbbf24;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer p {
+            color: #d1d5db;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-size: 1.125rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 32px;
+            text-align: center;
+            color: #9ca3af;
+        }
+        
+        .social-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .btn-facebook {
+            background: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        
+        .btn-tiktok {
+            background: transparent;
+            color: #ec4899;
+            border: 2px solid #ec4899;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        
+        .btn-tiktok:hover {
+            background: #ec4899;
+            color: white;
+        }
+        /* Modal Styles */
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            cursor: pointer;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 16px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 1024px) {
+            .founder-content,
+            .uvu-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .uvu-features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-content,
+            .founder-content,
+            .uvu-content,
+            .cta-content {
+                padding: 24px;
+            }
+        }
+        /* Animations */
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        /* Smooth scrolling */
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Loading animation */
+        
+        .loading {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        
+        .loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="loading">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m12 19-7-7 7-7"/>
+                    <path d="M19 12H5"/>
+                </svg> Back to Home
+            </a>
+            <nav class="nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <a href="#" class="active">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m8 3 4 8 5-5v11H6V6l2-3z"/>
+                </svg> Hlathi Electrical Services Blog
+            </div>
+            <h1>
+                Powering Innovation Through
+                <span class="gradient-text">Excellence</span>
+            </h1>
+            <p>
+                Join Lisa Msuthu Nywebeni on her inspiring journey from Capaciti training to building a cutting-edge electrical services business that's transforming communities through safety, innovation, and professional excellence.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Featured Video Post -->
+        <div class="card animate-fade-in">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/qPLtnOppsBw?si=C-xrESp6lu9UcYKw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="card-content">
+                <div class="meta">
+                    <div class="meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg> December 21, 2024
+                    </div>
+                    <div class="meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg> Lisa Msuthu Nywebeni
+                    </div>
+                    <span class="video-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5,3 19,12 5,21"/>
+                        </svg>
+                        Featured Video
+                    </span>
+                </div>
+                <h2>Electrical Safety Education: Protecting Lives Through Knowledge</h2>
+                <p>
+                    Watch our comprehensive electrical safety educational video that demonstrates our commitment to community safety and professional excellence. This video showcases the high-quality educational content we create to ensure electrical safety awareness reaches
+                    every household and business in our community.
+                </p>
+                <div class="social-buttons">
+                    <a href="https://www.facebook.com/profile.php?id=61577600998268" target="_blank" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg> Follow on Facebook
+                    </a>
+                    <a href="https://www.tiktok.com/@kwa_hlathi_nentozabo2.0?_t=ZM-8xOQS0Mzkij&_r=1" target="_blank" class="btn btn-outline">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg> Watch on TikTok
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Founder's Story Section -->
+        <div class="card founder-story animate-fade-in">
+            <div class="founder-content">
+                <div>
+                    <div class="founder-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"/>
+                            <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
+                        </svg> Founder's Journey
+                    </div>
+                    <h3>From Vision to Reality</h3>
+                    <p>
+                        I'm <strong>Lisa Msuthu Nywebeni</strong>, and my journey to revolutionize the electrical services industry began with a vision to transform our family business through cutting-edge skills and innovative approaches. This transformation
+                        was made possible through the exceptional training I received at both <strong>UVU Africa</strong> and <strong>Capaciti</strong>.
+                    </p>
+                    <p>
+                        What started as a traditional family electrical business has evolved into a comprehensive service provider that combines technical excellence with digital innovation. Through collaboration with incredibly talented youth who share the same passion for
+                        excellence, we're not just building a business – we're creating a movement that prioritizes safety, quality, and community empowerment.
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 16px; margin-top: 24px;">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                        </svg>
+                        <span style="font-size: 1.25rem; font-weight: 600;">Transforming Communities Through Excellence</span>
+                    </div>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <h4>Collaborative Excellence</h4>
+                        <p>Working with talented youth to deliver innovative electrical solutions</p>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m8 3 4 8 5-5v11H6V6l2-3z"/>
+                        </svg>
+                        <h4>Safety First</h4>
+                        <p>Prioritizing electrical safety education and professional installation</p>
+                    </div>
+                    <div class="feature-item">
+                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"/>
+                            <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
+                        </svg>
+                        <h4>Capaciti Training</h4>
+                        <p>Leveraging world-class training to build exceptional service standards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UVU Africa Journey Section -->
+        <div class="card uvu-section animate-fade-in">
+            <div class="uvu-content">
+                <div>
+                    <div class="uvu-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"/>
+                            <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
+                        </svg> UVU Africa Journey
+                    </div>
+                    <h3>Where It All Began</h3>
+                    <p>
+                        My transformative journey began at <strong>UVU Africa in 2023</strong>, where I joined the
+                        <strong> Youth in Business</strong> program and enrolled in their comprehensive digital program. I came with a clear mission: to acquire the skills needed to elevate our family business to new heights.
+                    </p>
+                    <p>
+                        At UVU Africa, I was introduced to an exceptional <strong>IT program</strong> that proved to be a game-changer. I learned website development, mastered the art of pitching, and gained the confidence that would become the foundation
+                        of my entrepreneurial success.
+                    </p>
+                    <p>
+                        Our family business had always existed, but we were operating in the dark ages of marketing – relying solely on word-of-mouth and basic pamphlets. UVU Africa opened my eyes to the power of
+                        <strong> digital marketing</strong> and gave me skills that complemented my electrical expertise, creating a powerful combination for business growth.
+                    </p>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/CRmuQt7k9sQ?si=MczCOA87bNrtd5Ux&start=5" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="uvu-features">
+                <div class="uvu-feature">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <h4>Youth in Business</h4>
+                    <p>Digital program that transformed my business mindset</p>
+                </div>
+                <div class="uvu-feature">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="7"/>
+                        <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
+                    </svg>
+                    <h4>IT Program</h4>
+                    <p>Website development and digital marketing mastery</p>
+                </div>
+                <div class="uvu-feature">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                    </svg>
+                    <h4>Business Growth</h4>
+                    <p>From pamphlets to professional digital presence</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Training Journey Gallery -->
+        <div class="card animate-fade-in">
+            <div class="gallery">
+                <h3>Our Capaciti Training Journey</h3>
+                <p class="gallery-description">
+                    Witness the transformation and skill development that shaped our expertise. These moments capture the dedication, learning, and collaboration that built the foundation of Hlathi Electrical Services.
+                </p>
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="https://i.ibb.co/3mNMW2B6/Whats-App-Image-2025-06-21-at-16-44-30-3c54358c.jpg" alt="Capaciti Training Session 1">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="https://i.ibb.co/W4GH6bZc/Whats-App-Image-2025-06-21-at-16-44-30-13b0cbff.jpg" alt="Capaciti Training Session 2">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="https://i.ibb.co/DP1wG5JJ/Whats-App-Image-2025-06-21-at-16-44-31-b4374e96.jpg" alt="Capaciti Training Session 3">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="https://i.ibb.co/svyTw8DS/Whats-App-Image-2025-06-21-at-16-44-32-210df191.jpg" alt="Capaciti Training Session 4">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="https://i.ibb.co/qzNx1FN/Whats-App-Image-2025-06-21-at-16-44-32-cdf89947.jpg" alt="Capaciti Training Session 5">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="https://i.ibb.co/21PTHpWg/Whats-App-Image-2025-06-21-at-16-44-33-0eee3da7.jpg" alt="Capaciti Training Session 6">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="https://i.ibb.co/v4sPGvKb/Whats-App-Image-2025-06-21-at-16-44-33-e523d639.jpg" alt="Capaciti Training Session 7">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(this)">
+                        <img src="https://i.ibb.co/NdR36Ykm/Whats-App-Image-2025-06-21-at-16-44-34-f441f0cb.jpg" alt="Capaciti Training Session 8">
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <p style="font-size: 1.125rem; color: #374151; margin-bottom: 24px; line-height: 1.7;">
+                        These images showcase the intensive training, collaborative learning environment, and the talented individuals who contributed to building our expertise. At Capaciti, we learned not just technical skills, but the importance of teamwork, innovation, and
+                        community impact.
+                    </p>
+                    <a href="#" class="btn btn-primary" style="padding: 12px 32px;">
+                        Learn More About Our Training
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Showcase -->
+        <div class="services-grid">
+            <div class="service-card animate-fade-in">
+                <div class="service-header blue">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m8 3 4 8 5-5v11H6V6l2-3z"/>
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <span class="service-badge blue">Professional Installation</span>
+                    <h3>Residential & Commercial Wiring</h3>
+                    <p>Expert electrical installations with a focus on safety, efficiency, and code compliance.</p>
+                    <a href="#" class="btn btn-outline" style="color: #2563eb; border-color: #2563eb;">Learn More</a>
+                </div>
+            </div>
+
+            <div class="service-card animate-fade-in">
+                <div class="service-header yellow">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="7"/>
+                        <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <span class="service-badge yellow">Safety Education</span>
+                    <h3>Electrical Safety Training</h3>
+                    <p>Comprehensive safety education programs for communities and businesses.</p>
+                    <a href="#" class="btn btn-outline" style="color: #eab308; border-color: #eab308;">Watch Videos</a>
+                </div>
+            </div>
+
+            <div class="service-card animate-fade-in">
+                <div class="service-header green">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <div class="service-content">
+                    <span class="service-badge green">Community Impact</span>
+                    <h3>Youth Empowerment</h3>
+                    <p>Training and mentoring the next generation of electrical professionals.</p>
+                    <a href="#" class="btn btn-outline" style="color: #10b981; border-color: #10b981;">Join Us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="card cta animate-fade-in">
+            <div class="cta-content">
+                <h3>Ready to Power Your Future?</h3>
+                <p>
+                    Join Lisa and the Hlathi Electrical Services team in revolutionizing electrical services. Whether you're a customer seeking excellence or an investor looking for the next big opportunity, we're here to electrify your expectations.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-yellow">Get Free Quote</a>
+                    <a href="#" class="btn btn-white">Investment Opportunities</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Hlathi Electrical Services</h4>
+                    <p>
+                        Transforming communities through exceptional electrical services, safety education, and youth empowerment. Founded by Lisa Msuthu Nywebeni with Capaciti training excellence.
+                    </p>
+                    <div class="social-buttons">
+                        <a href="https://www.facebook.com/profile.php?id=61577600998268" target="_blank" class="btn btn-facebook">
+                            Facebook
+                        </a>
+                        <a href="https://www.tiktok.com/@kwa_hlathi_nentozabo2.0?_t=ZM-8xOQS0Mzkij&_r=1" target="_blank" class="btn btn-tiktok">
+                            TikTok
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: #fbbf24; font-size: 1.125rem;">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Residential Wiring</a></li>
+                        <li><a href="#">Commercial Installation</a></li>
+                        <li><a href="#">Safety Training</a></li>
+                        <li><a href="#">Emergency Repairs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: #fbbf24; font-size: 1.125rem;">Contact</h4>
+                    <ul class="footer-links">
+                        <li>Professional Electrical Services</li>
+                        <li>Safety-First Approach</li>
+                        <li>Community Focused</li>
+                        <li>Capaciti Trained Excellence</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hlathi Electrical Services. Powered by excellence, driven by safety, inspired by community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Image Gallery -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImage" src="/placeholder.svg" alt="">
+    </div>
+
+    <script>
+        // Page loading animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and service cards for animation
+        document.querySelectorAll('.card, .service-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Gallery modal functions
+        function openModal(element) {
+            const img = element.querySelector('img');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Header scroll effect
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+
+            lastScrollTop = scrollTop;
+        });
+
+        // Button hover effects
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                if (!this.style.transform.includes('translateY')) {
+                    this.style.transform = 'translateY(-2px)';
+                }
+            });
+
+            btn.addEventListener('mouseleave', function() {
+                if (this.style.transform.includes('translateY(-2px)')) {
+                    this.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Service card hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-12px)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Gallery item hover effects
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Feature item hover effects
+        document.querySelectorAll('.feature-item, .uvu-feature').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Keyboard navigation for modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Prevent modal from closing when clicking on image
+        document.getElementById('modalImage').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Add loading states for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+
+            img.addEventListener('error', function() {
+                this.style.opacity = '0.5';
+                this.alt = 'Image failed to load';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add click animations
+        document.querySelectorAll('.btn, .gallery-item').forEach(element => {
+            element.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                `;
+
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>
